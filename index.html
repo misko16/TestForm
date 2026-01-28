@@ -1,0 +1,95 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventative Maintenance Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="document-page">
+<header>
+    <div class="title-section">
+        <h1>PREVENTATIVE MAINTENANCE CHECKLIST</h1>
+        <h2>Sectional Doors</h2>
+    </div>
+    <div class="logo-container">
+            <img src="https://i.postimg.cc/5NJJh5Xx/Nex20Yr-Logo-Dark.png" alt="Nex 20 Years Logo" class="logo-img">
+    </div>
+</header>
+
+    <div class="info-grid">
+      
+      
+<div class="field-row">
+    <span class="field-label">Date:</span>
+    <input type="text" id="flatpickr-date" class="date-picker-custom" placeholder="Select Date.." readonly>
+</div>
+      
+      
+        <div class="field-row"><span class="field-label">Customer:</span><textarea class="auto-grow" rows="1"></textarea></div>
+<div class="field-row">
+    <span class="field-label">Lead Tech:</span>
+    <input type="text" class="auto-grow" list="tech-names">
+</div>
+      
+<div class="field-row" style="position: relative;">
+    <span class="field-label">Address:</span>
+    <input type="text" id="address-input" class="auto-grow" autocomplete="off">
+    <div id="address-results" class="address-suggestions"></div>
+</div>
+      
+<div class="field-row">
+    <span class="field-label">Assistant Tech:</span>
+    <input type="text" class="auto-grow" list="tech-names">
+</div>
+
+<datalist id="tech-names">
+    <option value="Олександр Коваленко">
+    <option value="Андрій Шевченко">
+    <option value="Максим Бондаренко">
+    <option value="Дмитро Ткаченко">
+    <option value="Ігор Мороз">
+</datalist>
+      
+    </div>
+
+    <div class="mandatory-section">
+        <div class="mandatory-header">MANDATORY PM REQUIREMENTS</div>
+        <div class="mandatory-inputs">
+            <div class="m-cell"><span class="m-label">Door Size</span><textarea class="auto-grow" rows="1"></textarea></div>
+            <div class="m-cell"><span class="m-label">Track Config.</span><textarea class="auto-grow" rows="1"></textarea></div>
+            <div class="m-cell"><span class="m-label">Manufacturer</span><textarea class="auto-grow" rows="1"></textarea></div>
+            <div class="m-cell"><span class="m-label">Model #</span><textarea class="auto-grow" rows="1"></textarea></div>
+        </div>
+        <div class="mandatory-notes">
+            <div>
+                • Lubricate all rollers & springs as required<br>
+                • Adjust spring tension as required to balance door
+            </div>
+            <div>
+                • Secure loose fasteners on door face / tracks<br>
+                • Test full cycle of door after inspection & comment
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="col-inspect">✓ = PASS &nbsp;&nbsp; X = FAIL<br>INSPECT</th>
+                <th class="col-status">✓ / X</th>
+                <th class="col-comments">COMMENTS / REPAIRS RECOMMENDED</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            </tbody>
+    </table>
+
+</div>
+<button id="print-btn" class="no-print">Save as PDF / Print</button>
+  <footer class="no-print">
+    <p>Created by **Mykhailo Hrynenko**</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

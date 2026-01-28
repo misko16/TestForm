@@ -1,0 +1,215 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.document-page {
+    background-color: white;
+    width: 800px;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border: 1px solid #000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-section h1 { font-size: 18px; margin: 0; font-weight: bold; }
+.title-section h2 { font-size: 22px; margin: 5px 0; font-weight: bold; }
+
+.logo-container { text-align: right; width: 180px; }
+.logo-img { width: 100%; height: auto; }
+.logo-url { font-size: 12px; font-weight: bold; display: block; }
+
+/* Поля вводу з ефектом розширення */
+.auto-grow {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none; /* Забороняємо ручне розтягування */
+    overflow: hidden; /* Ховаємо скрол */
+    font-family: inherit;
+    font-size: 14px;
+    padding: 2px 0;
+    background: transparent;
+    display: block;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 5px;
+    margin-bottom: 20px;
+}
+
+.field-row {
+    display: flex;
+    border-bottom: 1px solid #000;
+    align-items: flex-end;
+}
+
+.field-label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 8px;
+    padding-bottom: 2px;
+    white-space: nowrap; /* Забороняє перенос тексту на новий рядок */
+    display: inline-block;
+}
+
+/* Додаємо стиль для інпутів зі списком, щоб вони виглядали як текстові поля */
+input[list].auto-grow {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    background: transparent;
+}
+/* Mandatory Section */
+.mandatory-section { border: 1px solid #000; margin-bottom: 15px; }
+.mandatory-header {
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 5px;
+    border-bottom: 1px solid #000;
+}
+.mandatory-inputs { display: grid; grid-template-columns: repeat(4, 1fr); }
+.m-cell { border-right: 1px solid #000; padding: 4px; }
+.m-cell:last-child { border-right: none; }
+.m-label { font-size: 10px; display: block; margin-bottom: 2px; }
+
+.mandatory-notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #000;
+    font-size: 11px;
+    padding: 8px;
+}
+
+/* Таблиця */
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #000; vertical-align: top; }
+th { font-size: 11px; padding: 5px; text-align: left; }
+
+.col-inspect { width: 30%; font-size: 12px; font-weight: bold; padding: 5px; }
+.col-status { width: 10%; text-align: center; }
+.col-comments { width: 60%; padding: 0; }
+
+.status-select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 8px 0;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    background: transparent;
+    cursor: pointer;
+}
+
+footer { margin-top: 15px; font-size: 12px; }
+
+/* Стиль для поля, коли на нього наводять */
+.date-picker-custom {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+/* Кастомізація самого вікна календаря (опціонально) */
+.flatpickr-calendar {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+    border: 1px solid #ddd !important;
+}
+
+.flatpickr-day.selected {
+    background: #0056b3 !important; /* Фірмовий колір Nex */
+    border-color: #0056b3 !important;
+}
+
+
+.address-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 80px; /* Підберіть під відступ вашого label */
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    line-height: 1.4;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestion-item strong {
+    font-size: 14px;
+    color: #000;
+}
+
+.suggestion-item small {
+    color: #666;
+    display: block;
+}
+
+
+
+.logo-container {
+    text-align: right;
+    width: 180px; /* Трохи ширше для ювілейного лого */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.logo-img {
+    max-width: 40%;
+    height: auto;
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    color: #666;
+    font-family: Arial, sans-serif;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+#print-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+}
